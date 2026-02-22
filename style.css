@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'PPMori-Regular'; /* Name you will use in your CSS */
+  src: url('assets/PPMori-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Helps manage how the font loads and prevents invisible text */
+}
+
+@font-face {
+  font-family: 'Lastik'; /* Name you will use in your CSS */
+  src: url('assets/Lastik.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Helps manage how the font loads and prevents invisible text */
+}
+
+body {
+  font-family: 'PPMori-Regular', sans-serif;
+}
+
+.lastik-font {
+    font-family: 'Lastik', sans-serif;
+}

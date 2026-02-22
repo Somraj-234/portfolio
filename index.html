@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Somraj</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="flex flex-col items-center justify-start p-16 gap-12">
+        <header class="flex flex-col items-start justify-start gap-6 max-w-3xl">
+            <img
+                class="w-40 h-40 object-cover object-[40%_75%]"
+                src="assets\profile-pic.jpg"
+                alt="profile-picture"
+            />
+            <div>
+                <h1 class="text-4xl lastik-font">Somraj Jadhav</h1>
+                <p>Software developer(by profession) Artist by Heart :)</p>
+            </div>
+            <p>
+                I’m a self taught developer who loves to design. I enjoy ,
+                building full-stack web apps, and getting lost in UI design.
+                Sometimes I make Graphic posters just for fun I really love
+                Designing and anything that lets me be creative.
+            </p>
+        </header>
+        <main class="max-w-3xl w-full">
+            <div id="nav" class="flex items-center justify-between w-full">
+                <!--<div
+                    onclick="tabSwitch(this)"
+                    id="project"
+                    class="nav-items cursor-pointer"
+                >
+                    Projects
+                </div>
+                <div onclick="tabSwitch(this)" id="work" class="nav-items cursor-pointer">
+                    Work
+                </div>
+                <div
+                    onclick="tabSwitch(this)"
+                    id="archive"
+                    class="nav-items cursor-pointer"
+                >
+                    Archive
+                </div>
+                <div
+                    onclick="tabSwitch(this)"
+                    id="store"
+                    class="nav-items cursor-pointer"
+                >
+                    Store
+                </div>-->
+            </div>
+            <div class="w-full h-[1px] bg-black/20 mt-2"></div>
+            <div
+                id="content"
+                class="flex items-start justify-between gap-4 mt-9"
+            >
+                <div
+                    id="project-content"
+                    class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch"
+                >
+                    <!--<div class="project-item flex flex-col gap-6">
+                        <img
+                            src="https://varnam.app/og-image.png"
+                            alt="varnam-image"
+                            class="w-full h-xl object-cover rounded-xl"
+                        />
+                        <div
+                            class="project-text-parent flex flex-col items-start justify-between gap-8"
+                        >
+                            <div
+                                class="project-text-content flex flex-col gap-4"
+                            >
+                                <h6 class="text-xl">Varnam</h6>
+                                <p class="">
+                                    an AI image generation Playground that helps
+                                    you make high quality visuals fast.
+                                </p>
+                            </div>
+                            <div class="flex gap-4">
+                                <h2 class="uppercase">Live</h2>
+                                <h2 class="uppercase">Code</h2>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                <div
+                    id="work-content"
+                    class="flex items-start justify-between gap-4"
+                >
+                    <div
+                        class="bullet-points flex flex-col items-center justify-start pt-1"
+                    >
+                        <div class="w-4 h-4 rounded-full bg-[#0E5AE3]"></div>
+                        <div
+                            id="line-to-stretch"
+                            class="w-0.5 bg-[#0E5AE3]/40"
+                        ></div>
+                        <div class="w-4 h-4 rounded-full bg-[#0E5AE3]"></div>
+                    </div>
+                    <div>
+                        <div
+                            id="work-items"
+                            class="flex flex-col gap-9 items-start justify-start"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="main.js"></script>
+    </body>
+</html>
