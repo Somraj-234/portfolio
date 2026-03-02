@@ -2,29 +2,22 @@ const nav = ["project", "work", "archive", "store"];
 let currentTab = "work";
 
 function tabSwitch(tab) {
-  console.log(tab);
   const tabId = tab.id;
   if (!nav.includes(tabId)) return;
   currentTab = tabId;
-  console.log("currentTab", currentTab);
   nav.forEach((item) => {
-    console.log(item);
     const contentElement = document.getElementById(`${item}-content`);
     const tabElement = document.getElementById(`${item}`);
     tabElement.classList.add("text-black/50");
     if (contentElement) {
       contentElement.classList.add("hidden");
     }
-    console.log("contentElement", contentElement);
-    console.log("done");
   });
 
   const activeContent = document.getElementById(`${tabId}-content`);
   tab.classList.remove("text-black/50");
-  tab.classList.add("text-black");
-  console.log("activeContent", activeContent);
-  if (activeContent) activeContent.classList.remove("hidden");
-  console.log("activeContent after", activeContent);
+  tab.classList.add("text-black")
+  if (activeContent) activeContent.classList.remove("hidden")
 }
 
 // nav items
@@ -69,13 +62,10 @@ function updateLineHeight() {
 
   if (line && target) {
     const lineTop = line.getBoundingClientRect().top;
-    console.log("lineTop", lineTop);
     const targetTop = target.getBoundingClientRect().top;
-    console.log("targetTop", targetTop);
     const targetHeight = target.offsetHeight;
 
     const distance = targetTop - lineTop + 2;
-    console.log("distance", distance);
     line.style.height = distance + "px";
   }
 }
@@ -217,7 +207,6 @@ renderProjectItems([
 window.addEventListener("load", updateLineHeight);
 window.addEventListener("resize", updateLineHeight);
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log(currentTab);
+document.addEventListener("DOMContentLoaded", () =>  {
   tabSwitch(document.getElementById(currentTab));
 });
