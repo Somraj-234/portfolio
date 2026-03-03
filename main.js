@@ -233,7 +233,7 @@ function renderArchiveContent(columns) {
 }
 
 
-const numArchiveImages = 57; 
+const numArchiveImages = 59; 
 const numColumns = 4;
 
 function getArchiveImagesArray() {
