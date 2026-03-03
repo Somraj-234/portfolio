@@ -204,6 +204,66 @@ renderProjectItems([
   },
 ]);
 
+
+// archive content 
+function archiveContent(columns) {
+  // Responsive Tailwind: use w-full, px-1 always; sm:flex-[0_0_50%] sm:max-w-[50%] (2 columns on >=sm), lg:flex-[0_0_25%] lg:max-w-[25%] (4 columns on >=lg)
+  return `
+    <div class="flex flex-wrap">
+      ${columns
+        .map((col) => {
+          const imagesHtmlArr = (col.images || []).map(
+            (img) =>
+              `<img class="w-full my-1 align-middle" src="${img.src}" alt="${img.alt || ""}">`
+          );
+          return `
+            <div class="flex flex-col w-full sm:flex-[0_0_50%] sm:max-w-[50%] lg:flex-[0_0_25%] lg:max-w-[25%] px-1">
+              ${imagesHtmlArr.join('')}
+            </div>
+          `;
+        })
+      .join('')}
+    </div>
+  `;
+}
+
+function renderArchiveContent(columns) {
+  // We don't need .replace hacks if we join arrays cleanly above.
+  document.getElementById("archive-content").innerHTML = archiveContent(columns);
+}
+
+
+const numArchiveImages = 57; 
+const numColumns = 4;
+
+function getArchiveImagesArray() {
+  const images = [];
+  for (let i = 1; i < numArchiveImages; i++) {
+    const filenameJpg = `assets/archive/archive_${i.toString().padStart(4, '0')}.jpg`;
+
+    images.push({
+      src: filenameJpg,
+      alt: `Archive image ${i+1}`
+    });
+  }
+  return images;
+}
+
+
+function distributeImagesInColumns(images, columnsCount) {
+  const columns = Array.from({length: columnsCount}, () => []);
+  images.forEach((img, idx) => {
+    columns[idx % columnsCount].push(img);
+  });
+  return columns.map(colImgs => ({ images: colImgs }));
+}
+
+const archiveImages = getArchiveImagesArray();
+const columns = distributeImagesInColumns(archiveImages, numColumns);
+
+renderArchiveContent(columns);
+
+
 window.addEventListener("load", updateLineHeight);
 window.addEventListener("resize", updateLineHeight);
 
