@@ -101,11 +101,11 @@ renderWorkItems([
   workItem({
     itemId: "work-item-1",
     company: "Enine",
-    role: "FullStack Developer | Intern",
+    role: "Software Developer",
     timeline: "Oct 25 - Present",
     link: "enine.com",
     description:
-      "Working in backend team, making APIs, writing scripts to transform data, adding frontend features.",
+      `Working on <a href="https://batteryos.com" class="underline" target="_blank" rel="noopener noreferrer">BatteryOS</a>, making APIs, writing scripts to transform data, adding frontend features.`,
   }),
   workItem({
     itemId: "work-item-2",
