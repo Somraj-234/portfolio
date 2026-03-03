@@ -18,6 +18,9 @@ function tabSwitch(tab) {
   tab.classList.remove("text-black/50");
   tab.classList.add("text-black")
   if (activeContent) activeContent.classList.remove("hidden")
+
+  localStorage.setItem('currentTab',currentTab)
+  updateLineHeight()
 }
 
 // nav items
@@ -103,7 +106,7 @@ renderWorkItems([
     company: "Enine",
     role: "Software Developer",
     timeline: "Oct 25 - Present",
-    link: "enine.com",
+    link: "https://enine.com/",
     description:
       `Working on <a href="https://batteryos.com" class="underline" target="_blank" rel="noopener noreferrer">BatteryOS</a>, making APIs, writing scripts to transform data, adding frontend features.`,
   }),
@@ -112,7 +115,7 @@ renderWorkItems([
     company: "Persist Ventures",
     role: "Frontend Developer | Intern",
     timeline: "Jan 2025 - June 2025",
-    link: "vidgencraft.com",
+    link: "https://vidgencraft.com/",
     description:
       "Worked on 2 major projects, from designing whole website in figma to developing it in REACT and integrating it with FastAPI backend.",
   }),
@@ -207,7 +210,6 @@ renderProjectItems([
 
 // archive content 
 function archiveContent(columns) {
-  // Responsive Tailwind: use w-full, px-1 always; sm:flex-[0_0_50%] sm:max-w-[50%] (2 columns on >=sm), lg:flex-[0_0_25%] lg:max-w-[25%] (4 columns on >=lg)
   return `
     <div class="flex flex-wrap">
       ${columns
@@ -217,7 +219,8 @@ function archiveContent(columns) {
               `<img class="w-full my-1 align-middle" src="${img.src}" alt="${img.alt || ""}">`
           );
           return `
-            <div class="flex flex-col w-full sm:flex-[0_0_50%] sm:max-w-[50%] lg:flex-[0_0_25%] lg:max-w-[25%] px-1">
+            <div class="flex flex-col flex-[0_0_50%] max-w-[50%] md:flex-[0_0_33.333%] md:max-w-[33.333%]
+            lg:flex-[0_0_25%] lg:max-w-[25%] px-1">
               ${imagesHtmlArr.join('')}
             </div>
           `;
@@ -228,7 +231,6 @@ function archiveContent(columns) {
 }
 
 function renderArchiveContent(columns) {
-  // We don't need .replace hacks if we join arrays cleanly above.
   document.getElementById("archive-content").innerHTML = archiveContent(columns);
 }
 
@@ -268,5 +270,6 @@ window.addEventListener("load", updateLineHeight);
 window.addEventListener("resize", updateLineHeight);
 
 document.addEventListener("DOMContentLoaded", () =>  {
+  currentTab = localStorage.getItem('currentTab') || 'work'
   tabSwitch(document.getElementById(currentTab));
 });
