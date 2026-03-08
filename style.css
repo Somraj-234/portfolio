@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+
 @font-face {
   font-family: 'PPMori-Regular'; /* Name you will use in your CSS */
   src: url('assets/PPMori-Regular.otf') format('opentype');
@@ -15,9 +19,110 @@
 }
 
 body {
-  font-family: 'PPMori-Regular', sans-serif;
+  font-family: 'Plus Jakarta Sans', 'PPMori-Regular', sans-serif;
+   background: #fdfdfc;
+   color: white;;
 }
 
 .lastik-font {
     font-family: 'Lastik', sans-serif;
+}
+
+.gray-text {
+    /*color: #21201c;*/
+    color: white;
+}
+
+/*.primary-blue{
+    color: #0E5AE3;
+}*/
+
+.primary-blue{
+    color: white;
+}
+.bg-primary-blue{
+    background-color: white;
+}
+
+
+/* cloud classes */
+/*body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}*/
+
+.sky-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, #62a0d8 0%, #2178d1 50%, #085cb3 100%);
+  z-index: -1;
+  transition: filter 0.3s ease;
+}
+
+svg {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.cloud-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  filter: url(#filter);
+}
+
+.cloud {
+  anchor-name: --cloud;
+  width: 680px;
+  height: 280px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  will-change: transform;
+  touch-action: none;
+  border: none;
+  outline: none;
+  z-index: -1;
+}
+
+.cloud:active {
+  cursor: grabbing;
+}
+
+textarea::-webkit-resizer {
+  display: none;
+}
+
+textarea::-moz-resizer {
+  display: none;
+}
+
+.resize-handle {
+  position: absolute;
+  position-anchor: --cloud;
+  top: anchor(bottom);
+  left: anchor(right);
+  transform: translate(-100%, -100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 42px;
+  color: white;
+}
+
+.cloud-container:has(.cloud:hover) ~ .resize-handle {
+  opacity: 0.5;
 }

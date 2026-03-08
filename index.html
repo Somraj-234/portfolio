@@ -8,7 +8,56 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body class="flex flex-col items-center justify-start p-16 gap-12">
-        <header class="flex flex-col items-start justify-start gap-6 max-w-3xl">
+        <div class="sky-background z-0"></div>
+        
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <filter id="filter" x="-50%" y="-50%" width="200%" height="200%" style="color-interpolation-filters:sRGB">
+            <feTurbulence type="fractalNoise" seed="462" baseFrequency="0.011" numOctaves="5" result="noise1" />
+            <feTurbulence type="fractalNoise" seed="462" baseFrequency="0.011" numOctaves="2" result="noise2" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+            <feDisplacementMap in="blur1" scale="100" in2="noise1" result="cloud1" />
+            <feFlood id="shadow2" flood-color="rgb(215,215,215)" flood-opacity="0.2" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feOffset dx="-10" dy="-3" />
+            <feMorphology radius="20" />
+            <feGaussianBlur stdDeviation="20" />
+            <feDisplacementMap scale="100" in2="noise1" result="cloud2" />
+            <feFlood id="shadow3" flood-color="rgb(66,105,146)" flood-opacity="0.2" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feOffset dx="-10" dy="40" />
+            <feMorphology radius="0 40" />
+            <feGaussianBlur stdDeviation="20" />
+            <feDisplacementMap scale="80" in2="noise2" result="cloud3" />
+            <feFlood id="shadow4" flood-color="rgb(0,0,0)" flood-opacity="0.4" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feOffset dx="20" dy="60" />
+            <feMorphology radius="0 65" />
+            <feGaussianBlur stdDeviation="30" />
+            <feDisplacementMap scale="100" in2="noise2" result="cloud4" />
+        
+            <feFlood id="shadow5" flood-color="rgb(0,0,0)" flood-opacity="0.4" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feOffset dx="20" dy="70" />
+            <feMorphology radius="0 200" />
+            <feGaussianBlur stdDeviation="30" />
+            <feDisplacementMap scale="100" in2="noise2" result="cloud5" />
+        
+            <feMerge>
+              <feMergeNode in="cloud1" id="feMergeNode954" />
+              <feMergeNode in="cloud2" id="feMergeNode956" />
+              <feMergeNode in="cloud3" id="feMergeNode958" />
+              <feMergeNode in="cloud4" id="feMergeNode960" />
+              <feMergeNode in="cloud5" id="feMergeNode962" />
+            </feMerge>
+          </filter>
+        </svg>
+        
+        <div class="cloud-container z-0">
+          <textarea class="cloud" readonly></textarea>
+        </div>
+        
+        
+        <header class="flex flex-col items-start justify-start gap-6 max-w-3xl z-10">
             <img
                 class="w-40 h-40 object-cover object-[40%_100%]"
                 src="assets\pfp.jpg"
@@ -16,57 +65,81 @@
             />
             <div>
                 <h1 class="text-4xl lastik-font">Somraj Jadhav</h1>
-                <p>Software developer(by profession) Artist by Heart :)</p>
+                <p class="font-medium">
+                    Software developer(by profession) Artist by Heart :)
+                </p>
             </div>
-            <p>
+            <p class="gray-text opacity-85 font-medium">
                 I’m a self taught developer who loves to design. I enjoy ,
                 building full-stack web apps, and getting lost in UI design.
                 Sometimes I make Graphic posters just for fun I really love
                 Designing and anything that lets me be creative.
             </p>
         </header>
-        <main class="max-w-3xl w-full">
-            <div id="nav" class="flex items-center justify-between w-full">
-
-            </div>
-            <div class="w-full h-[1px] bg-black/20 mt-2"></div>
+        <main class="max-w-3xl w-full font-medium z-10">
+            <div
+                id="nav"
+                class="flex items-center justify-between w-full"
+            ></div>
+            <!--<div class="w-full h-[1px] bg-black/20 mt-2"></div>-->
             <div
                 id="content"
-                class="flex items-start justify-between gap-4 mt-9"
+                class="flex flex-col items-start justify-start gap-16"
             >
-                <div
-                    id="project-content"
-                    class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch"
-                >
-                </div>
-                <div
-                    id="work-content"
-                    class="flex items-start justify-between gap-4"
-                >
+                <div class="flex flex-col gap-4">
+                    <h1 class="font-medium gray-text opacity-25 text-lg">
+                        Work Experience
+                    </h1>
                     <div
-                        class="bullet-points flex flex-col items-center justify-start pt-1"
+                        id="work-content"
+                        class="flex items-start justify-between gap-4"
                     >
-                        <div class="w-4 h-4 rounded-full bg-[#0E5AE3]"></div>
                         <div
-                            id="line-to-stretch"
-                            class="w-0.5 bg-[#0E5AE3]/40"
-                        ></div>
-                        <div class="w-4 h-4 rounded-full bg-[#0E5AE3]"></div>
-                    </div>
-                    <div>
-                        <div
-                            id="work-items"
-                            class="flex flex-col gap-9 items-start justify-start"
-                        ></div>
+                            class="bullet-points flex flex-col items-center justify-start pt-1"
+                        >
+                            <div
+                                class="w-4 h-4 rounded-full bg-primary-blue"
+                            ></div>
+                            <div
+                                id="line-to-stretch"
+                                class="w-0.5 bg-primary-blue opacity-40"
+                            ></div>
+                            <div
+                                class="w-4 h-4 rounded-full bg-primary-blue"
+                            ></div>
+                        </div>
+                        <div>
+                            <div
+                                id="work-items"
+                                class="flex flex-col gap-9 items-start justify-start"
+                            ></div>
+                        </div>
                     </div>
                 </div>
-                <div
-                id="archive-content"
-                class="w-full gap-4 items-stretch"
-            >
-            
-            </div>
-            </div>
+                <div class="flex flex-col gap-4">
+                    <h1 class="font-medium gray-text opacity-25 text-lg">
+                        Projects
+                    </h1>
+                    <div
+                        id="project-content"
+                        class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch"
+                    ></div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h1 class="font-medium gray-text opacity-25 text-lg">
+                        Archive
+                    </h1>
+                    <div
+                        id="archive-content"
+                        class="w-full gap-4 items-stretch"
+                    ></div>
+                </div>
+                <div id="footer" class="w-full  flex items-center justify-center">
+                    <div class="w-48 h-auto">
+                        <img class="w-full h-full object-contain" src="./assets/somraj-logo.png" alt="logo" />
+                    </div>
+                </div>
+            </div>  
         </main>
         <script src="main.js"></script>
     </body>
