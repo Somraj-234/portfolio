@@ -1,23 +1,50 @@
 @font-face {
-  font-family: 'PPMori-Regular'; /* Name you will use in your CSS */
-  src: url('assets/PPMori-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; /* Helps manage how the font loads and prevents invisible text */
+    font-family: "PPMori-Regular";
+    src: url("assets/PPMori-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lastik'; /* Name you will use in your CSS */
-  src: url('assets/Lastik.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; /* Helps manage how the font loads and prevents invisible text */
+    font-family: "Lastik";
+    src: url("assets/Lastik.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'PPMori-Regular', sans-serif;
+    font-family: "Plus Jakarta Sans", "PPMori-Regular", sans-serif;
+    background: #fdfdfc;
+    color: black;
 }
 
 .lastik-font {
-    font-family: 'Lastik', sans-serif;
+    font-family: "Lastik", sans-serif;
+}
+
+.gray-text {
+    color: #21201c;
+}
+
+.primary-blue {
+    color: #0e5ae3;
+}
+
+.bg-primary-blue {
+    background-color: #0e5ae3;
+}
+
+::selection {
+    background: #0e5ae3;
+    color: white;
+}
+::-moz-selection {
+    background: #0e5ae3;
+    color: white;
 }

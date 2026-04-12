@@ -1,28 +1,3 @@
-const nav = ["project", "work", "archive", "store"];
-let currentTab = "work";
-
-function tabSwitch(tab) {
-  const tabId = tab.id;
-  if (!nav.includes(tabId)) return;
-  currentTab = tabId;
-  nav.forEach((item) => {
-    const contentElement = document.getElementById(`${item}-content`);
-    const tabElement = document.getElementById(`${item}`);
-    tabElement.classList.add("text-black/50");
-    if (contentElement) {
-      contentElement.classList.add("hidden");
-    }
-  });
-
-  const activeContent = document.getElementById(`${tabId}-content`);
-  tab.classList.remove("text-black/50");
-  tab.classList.add("text-black")
-  if (activeContent) activeContent.classList.remove("hidden")
-
-  localStorage.setItem('currentTab',currentTab)
-  updateLineHeight()
-}
-
 // nav items
 function navItems({ navId, title }) {
   return `
@@ -38,25 +13,6 @@ function navItems({ navId, title }) {
 function renderNavItems(items) {
   document.getElementById("nav").innerHTML = items.join("");
 }
-
-renderNavItems([
-  navItems({
-    navId: "project",
-    title: "Project",
-  }),
-  navItems({
-    navId: "work",
-    title: "Work",
-  }),
-  navItems({
-    navId: "archive",
-    title: "Archive",
-  }),
-  navItems({
-    navId: "store",
-    title: "Store",
-  }),
-]);
 
 // work content
 function updateLineHeight() {
@@ -74,24 +30,35 @@ function updateLineHeight() {
 }
 
 // work item component
-function workItem({ itemId, role, timeline, link, description, company }) {
+function workItem({
+  itemId,
+  role,
+  timeline,
+  link,
+  description,
+  company,
+  stack,
+}) {
   return `
   <div class="work-item w-full">
       <div>
-          <h2 id='${itemId === "work-item-2" ? "target-heading" : itemId}' class="work-title text-xl">${company}</h2>
+          <h2 id='${itemId === "work-item-2" ? "target-heading" : itemId}' class="work-title text-xl lastik-font">${company}</h2>
           <div
-              class="work-timeline flex items-center justify-between"
+              class="work-timeline flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-between "
           >
-              <p>${role}</p>
-              <p>${timeline}</p>
+              <p class="font-medium">${role}</p>
+              <p class="font-medium">${timeline}</p>
           </div>
-          <a class="work-link underline" href="${link}"
+          <a class="work-link hover:underline primary-blue"  href=""https://${link}/"
               >${link}</a
           >
       </div>
-      <p>
+      <p class="gray-text opacity-85 ">
         ${description}
       </p>
+      <div class="flex flex-wrap gap-2 pt-2">
+        ${stack.map((item) => `<span class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center">${item}</span>`).join("")}
+      </div>
   </div>`;
 }
 
@@ -106,18 +73,26 @@ renderWorkItems([
     company: "Enine",
     role: "Software Developer",
     timeline: "Oct 25 - Present",
-    link: "https://enine.com/",
-    description:
-      `Working on <a href="https://batteryos.com" class="underline" target="_blank" rel="noopener noreferrer">BatteryOS</a>, making APIs, writing scripts to transform data, adding frontend features.`,
+    link: "enine.com",
+    description: `Working on <a href="https://batteryos.com" class="underline" target="_blank" rel="noopener noreferrer">BatteryOS</a>, making APIs, writing scripts to transform data, adding frontend features.`,
+    stack: [
+      "Django",
+      "Python",
+      "Celery",
+      "HTML/CSS",
+      "JavaScript",
+      "Bootstrap",
+    ],
   }),
   workItem({
     itemId: "work-item-2",
     company: "Persist Ventures",
     role: "Frontend Developer | Intern",
     timeline: "Jan 2025 - June 2025",
-    link: "https://vidgencraft.com/",
+    link: "vidgencraft.com",
     description:
       "Worked on 2 major projects, from designing whole website in figma to developing it in REACT and integrating it with FastAPI backend.",
+    stack: ["React", "HTML/CSS", "JavaScript", "Tailwind"],
   }),
 ]);
 
@@ -125,7 +100,7 @@ renderWorkItems([
 function ProjectContent({ imgUrl, title, description, link, code }) {
   return `
   <div id=${title} class="project-item flex flex-col gap-6 h-full">
-      <div class="h-48 overflow-hidden">
+      <div class=" overflow-hidden aspect-16/9">
       <img
           src=${imgUrl}
           alt="${title}-image"
@@ -148,11 +123,11 @@ function ProjectContent({ imgUrl, title, description, link, code }) {
              ${
                code
                  ? ` <a href="${code}" class="uppercase">Code
-               <span class="inline-block w-3 h-3 bg-[#0E5AE3]"
+               <span class="inline-block w-3 h-3 bg-primary-blue"
                style="-webkit-mask: url('/assets/star.png') no-repeat center; mask: url('/assets/star.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;">
                </span>
              </a>`
-                 : ''
+                 : ""
              }
               </div>
       </div>
@@ -207,8 +182,7 @@ renderProjectItems([
   },
 ]);
 
-
-// archive content 
+// archive content
 function archiveContent(columns) {
   return `
     <div class="flex flex-wrap">
@@ -216,48 +190,47 @@ function archiveContent(columns) {
         .map((col) => {
           const imagesHtmlArr = (col.images || []).map(
             (img) =>
-              `<img class="w-full my-1 align-middle" src="${img.src}" alt="${img.alt || ""}">`
+              `<img class="w-full my-1 align-middle" src="${img.src}" alt="${img.alt || ""}">`,
           );
           return `
             <div class="flex flex-col flex-[0_0_50%] max-w-[50%] md:flex-[0_0_33.333%] md:max-w-[33.333%]
             lg:flex-[0_0_25%] lg:max-w-[25%] px-1">
-              ${imagesHtmlArr.join('')}
+              ${imagesHtmlArr.join("")}
             </div>
           `;
         })
-      .join('')}
+        .join("")}
     </div>
   `;
 }
 
 function renderArchiveContent(columns) {
-  document.getElementById("archive-content").innerHTML = archiveContent(columns);
+  document.getElementById("archive-content").innerHTML =
+    archiveContent(columns);
 }
 
-
-const numArchiveImages = 59; 
+const numArchiveImages = 59;
 const numColumns = 4;
 
 function getArchiveImagesArray() {
   const images = [];
   for (let i = 1; i < numArchiveImages; i++) {
-    const filenameJpg = `assets/archive/archive_${i.toString().padStart(4, '0')}.jpg`;
+    const filenameJpg = `assets/archive/archive_${i.toString().padStart(4, "0")}.jpg`;
 
     images.push({
       src: filenameJpg,
-      alt: `Archive image ${i+1}`
+      alt: `Archive image ${i + 1}`,
     });
   }
   return images;
 }
 
-
 function distributeImagesInColumns(images, columnsCount) {
-  const columns = Array.from({length: columnsCount}, () => []);
+  const columns = Array.from({ length: columnsCount }, () => []);
   images.forEach((img, idx) => {
     columns[idx % columnsCount].push(img);
   });
-  return columns.map(colImgs => ({ images: colImgs }));
+  return columns.map((colImgs) => ({ images: colImgs }));
 }
 
 const archiveImages = getArchiveImagesArray();
@@ -265,11 +238,5 @@ const columns = distributeImagesInColumns(archiveImages, numColumns);
 
 renderArchiveContent(columns);
 
-
 window.addEventListener("load", updateLineHeight);
 window.addEventListener("resize", updateLineHeight);
-
-document.addEventListener("DOMContentLoaded", () =>  {
-  currentTab = localStorage.getItem('currentTab') || 'work'
-  tabSwitch(document.getElementById(currentTab));
-});
