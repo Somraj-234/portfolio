@@ -142,11 +142,11 @@ function renderProjectItems(items) {
 
 renderProjectItems([
   {
-    imgUrl: "https://varnam.app/og-image.png",
+    imgUrl: "https://varnam.xyz/og-image.png",
     title: "Varnam",
     description:
       "An AI image generation Playground that helps you make high quality visuals fast.",
-    link: "https://varnam.app",
+    link: "https://varnam.xyz",
   },
   {
     imgUrl: "https://betterwriteprompt.vercel.app/og-image.png",
