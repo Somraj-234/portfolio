@@ -63,3 +63,8 @@ body {
     background: #0e5ae3;
     color: white;
 }
+
+#archive {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+}

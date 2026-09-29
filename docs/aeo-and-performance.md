@@ -65,9 +65,11 @@ Section contrast was **not** increased. That would make the labels darker and ch
 
 Still rendered on the homepage. Images after the first in each column use `loading="lazy"`. Width/height attributes are estimates so the browser can reserve space; masonry layout CSS is unchanged. This is the main honest performance lever without moving the gallery.
 
-### Tailwind CDN
+### Performance (lab payload)
 
-Left in place. Removing it would risk the layout. Unused-JS and render-blocking will remain on PageSpeed until a static CSS build is a separate, visual-regression-tested task.
+PageSpeed mobile after the first ship was still **77**, with **~30.5 MB** transferred and **LCP ~5.7s**. Native `loading="lazy"` did not help the lab test: every archive `<img src>` is still a request (Chrome also prefetches a large lazy margin, and four column-top images were `eager`). The Tailwind browser runtime stayed render-blocking (~590ms) and showed unused/legacy JS.
+
+Fix: do not set `src` until `IntersectionObserver` (small `rootMargin`). Profile photo stays a real `src` plus preload. Project thumbs use `data-src` the same way. Tailwind CDN (`@tailwindcss/browser`) stays for layout. Assets get a long Cache-Control. Archive uses `content-visibility: auto` so offscreen masonry is cheaper to style.
 
 ### Document title
 

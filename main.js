@@ -5,10 +5,40 @@ function updateLineHeight() {
   if (line && target) {
     const lineTop = line.getBoundingClientRect().top;
     const targetTop = target.getBoundingClientRect().top;
-
-    const distance = targetTop - lineTop + 2;
-    line.style.height = distance + "px";
+    line.style.height = targetTop - lineTop + 2 + "px";
   }
+}
+
+function loadWhenNear(img, observer) {
+  const src = img.getAttribute("data-src");
+  if (!src) return;
+  img.src = src;
+  img.removeAttribute("data-src");
+  observer.unobserve(img);
+}
+
+function observeDeferredImages() {
+  const images = document.querySelectorAll("img[data-src]");
+  if (!images.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    images.forEach((img) => {
+      img.src = img.getAttribute("data-src");
+      img.removeAttribute("data-src");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) loadWhenNear(entry.target, observer);
+      });
+    },
+    { rootMargin: "160px 0px", threshold: 0.01 },
+  );
+
+  images.forEach((img) => observer.observe(img));
 }
 
 function archiveContent(columns) {
@@ -17,8 +47,8 @@ function archiveContent(columns) {
       ${columns
         .map((col) => {
           const imagesHtmlArr = (col.images || []).map(
-            (img, imageIndex) =>
-              `<img class="w-full my-1 align-middle" src="${img.src}" alt="${img.alt || ""}" loading="${imageIndex === 0 ? "eager" : "lazy"}" decoding="async">`,
+            (img) =>
+              `<img class="w-full my-1 align-middle" data-src="${img.src}" alt="${img.alt || ""}" decoding="async">`,
           );
           return `
             <div class="flex flex-col flex-[0_0_50%] max-w-[50%] md:flex-[0_0_33.333%] md:max-w-[33.333%]
@@ -43,10 +73,8 @@ const numColumns = 4;
 function getArchiveImagesArray() {
   const images = [];
   for (let i = 1; i < numArchiveImages; i++) {
-    const filenameJpg = `assets/archive/archive_${i.toString().padStart(4, "0")}.jpg`;
-
     images.push({
-      src: filenameJpg,
+      src: `assets/archive/archive_${i.toString().padStart(4, "0")}.jpg`,
       alt: `Graphic poster from Somraj Jadhav archive, ${i}`,
     });
   }
@@ -61,10 +89,8 @@ function distributeImagesInColumns(images, columnsCount) {
   return columns.map((colImgs) => ({ images: colImgs }));
 }
 
-const archiveImages = getArchiveImagesArray();
-const columns = distributeImagesInColumns(archiveImages, numColumns);
-
-renderArchiveContent(columns);
+renderArchiveContent(distributeImagesInColumns(getArchiveImagesArray(), numColumns));
+observeDeferredImages();
 
 window.addEventListener("load", updateLineHeight);
 window.addEventListener("resize", updateLineHeight);
