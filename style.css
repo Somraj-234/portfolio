@@ -18,6 +18,21 @@ html {
     scroll-behavior: smooth;
 }
 
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: #0e5ae3;
+    color: #fff;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+}
+
 body {
     font-family: "Plus Jakarta Sans", "PPMori-Regular", sans-serif;
     background: #fdfdfc;

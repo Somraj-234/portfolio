@@ -3,12 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Somraj</title>
+        <title>Somraj Jadhav — Software Developer &amp; Artist</title>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <link rel="stylesheet" href="style.css" />
+        <link rel="canonical" href="https://somraj.net/" />
+        <link rel="describedby" href="https://somraj.net/llms.txt" />
         <meta
             name="description"
-            content="Somraj Jadhav is a self-taught software developer and artist specializing in full-stack web development, UI/UX design, and graphic art. Explore his portfolio of projects and creative works."
+            content="Portfolio of Somraj Jadhav, a self-taught software developer and artist focused on full-stack web apps, UI/UX, and graphic design."
         />
         <meta
             name="keywords"
@@ -16,20 +18,16 @@
         />
         <meta name="author" content="Somraj Jadhav" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://somraj.net/" />
 
         <meta property="og:type" content="website" />
-        <meta
-            property="og:url"
-            content="https://somraj.net/assets/somrajog.png"
-        />
+        <meta property="og:url" content="https://somraj.net/" />
         <meta
             property="og:title"
-            content="Somraj Jadhav - Software Developer & Artist Portfolio"
+            content="Somraj Jadhav - Software Developer &amp; Artist Portfolio"
         />
         <meta
             property="og:description"
-            content="Somraj Jadhav is a self-taught software developer and artist specializing in full-stack web development, UI/UX design, and graphic art. Explore his portfolio of projects and creative works."
+            content="Portfolio of Somraj Jadhav, a self-taught software developer and artist focused on full-stack web apps, UI/UX, and graphic design."
         />
         <meta
             property="og:image"
@@ -39,17 +37,14 @@
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@somrajjj" />
         <meta name="twitter:creator" content="@somrajjj" />
-        <meta
-            name="twitter:url"
-            content="https://somraj.net/assets/somrajog.png"
-        />
+        <meta name="twitter:url" content="https://somraj.net/" />
         <meta
             name="twitter:title"
-            content="Somraj Jadhav - Software Developer & Artist Portfolio"
+            content="Somraj Jadhav - Software Developer &amp; Artist Portfolio"
         />
         <meta
             name="twitter:description"
-            content="Somraj Jadhav is a self-taught software developer and artist specializing in full-stack web development, UI/UX design, and graphic art. Explore his portfolio of projects and creative works."
+            content="Portfolio of Somraj Jadhav, a self-taught software developer and artist focused on full-stack web apps, UI/UX, and graphic design."
         />
         <meta
             name="twitter:image"
@@ -58,64 +53,54 @@
 
         <link rel="icon" type="image/png" href="/assets/favicon.png" />
         <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://somraj.net/#website",
+                        "url": "https://somraj.net/",
+                        "name": "Somraj Jadhav",
+                        "description": "Portfolio of Somraj Jadhav, a self-taught software developer and artist focused on full-stack web apps, UI/UX, and graphic design.",
+                        "inLanguage": "en",
+                        "dateModified": "2026-09-29",
+                        "publisher": { "@id": "https://somraj.net/#person" }
+                    },
+                    {
+                        "@type": "Person",
+                        "@id": "https://somraj.net/#person",
+                        "name": "Somraj Jadhav",
+                        "url": "https://somraj.net/",
+                        "image": "https://somraj.net/assets/pfp.png",
+                        "jobTitle": "Software Developer",
+                        "description": "Self-taught software developer and artist working on full-stack web apps, UI/UX design, and graphic art.",
+                        "sameAs": [
+                            "https://x.com/somrajjj",
+                            "https://www.instagram.com/somrajadhav/",
+                            "https://github.com/somraj-234",
+                            "https://www.linkedin.com/in/somrajjadhav/"
+                        ]
+                    }
+                ]
+            }
+        </script>
     </head>
 
     <body class="flex flex-col items-center justify-start p-16 gap-12">
-        <!--<div class="sky-background z-0"></div>
-
-        <svg xmlns="http://www.w3.org/2000/svg">
-          <filter id="filter" x="-50%" y="-50%" width="200%" height="200%" style="color-interpolation-filters:sRGB">
-            <feTurbulence type="fractalNoise" seed="462" baseFrequency="0.011" numOctaves="5" result="noise1" />
-            <feTurbulence type="fractalNoise" seed="462" baseFrequency="0.011" numOctaves="2" result="noise2" />
-            <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
-            <feDisplacementMap in="blur1" scale="100" in2="noise1" result="cloud1" />
-            <feFlood id="shadow2" flood-color="rgb(215,215,215)" flood-opacity="0.2" />
-            <feComposite operator="in" in2="SourceGraphic" />
-            <feOffset dx="-10" dy="-3" />
-            <feMorphology radius="20" />
-            <feGaussianBlur stdDeviation="20" />
-            <feDisplacementMap scale="100" in2="noise1" result="cloud2" />
-            <feFlood id="shadow3" flood-color="rgb(66,105,146)" flood-opacity="0.2" />
-            <feComposite operator="in" in2="SourceGraphic" />
-            <feOffset dx="-10" dy="40" />
-            <feMorphology radius="0 40" />
-            <feGaussianBlur stdDeviation="20" />
-            <feDisplacementMap scale="80" in2="noise2" result="cloud3" />
-            <feFlood id="shadow4" flood-color="rgb(0,0,0)" flood-opacity="0.4" />
-            <feComposite operator="in" in2="SourceGraphic" />
-            <feOffset dx="20" dy="60" />
-            <feMorphology radius="0 65" />
-            <feGaussianBlur stdDeviation="30" />
-            <feDisplacementMap scale="100" in2="noise2" result="cloud4" />
-
-            <feFlood id="shadow5" flood-color="rgb(0,0,0)" flood-opacity="0.4" />
-            <feComposite operator="in" in2="SourceGraphic" />
-            <feOffset dx="20" dy="70" />
-            <feMorphology radius="0 200" />
-            <feGaussianBlur stdDeviation="30" />
-            <feDisplacementMap scale="100" in2="noise2" result="cloud5" />
-
-            <feMerge>
-              <feMergeNode in="cloud1" id="feMergeNode954" />
-              <feMergeNode in="cloud2" id="feMergeNode956" />
-              <feMergeNode in="cloud3" id="feMergeNode958" />
-              <feMergeNode in="cloud4" id="feMergeNode960" />
-              <feMergeNode in="cloud5" id="feMergeNode962" />
-            </feMerge>
-          </filter>
-        </svg>
-
-        <div class="cloud-container z-0">
-          <textarea class="cloud" readonly></textarea>
-        </div>-->
+        <a class="skip-link" href="#content">Skip to content</a>
 
         <header
             class="flex flex-col items-start justify-start gap-6 max-w-3xl z-10"
         >
             <img
                 class="w-40 h-40 object-cover object-[40%_100%]"
-                src="assets\pfp.png"
-                alt="profile-picture"
+                src="assets/pfp.png"
+                width="160"
+                height="160"
+                fetchpriority="high"
+                alt="Portrait of Somraj Jadhav"
             />
             <div>
                 <h1 class="text-4xl lastik-font">Somraj Jadhav</h1>
@@ -133,15 +118,17 @@
                 id="nav"
                 class="flex items-center justify-between w-full"
             ></div>
-            <!--<div class="w-full h-[1px] bg-black/20 mt-2"></div>-->
             <div
                 id="content"
                 class="flex flex-col items-start justify-start gap-16"
             >
-                <div class="flex flex-col gap-4">
-                    <h1 class="font-medium gray-text opacity-25 text-lg">
+                <section id="work" class="flex flex-col gap-4" aria-labelledby="work-heading">
+                    <h2
+                        id="work-heading"
+                        class="font-medium gray-text opacity-25 text-lg"
+                    >
                         Work Experience
-                    </h1>
+                    </h2>
                     <div
                         id="work-content"
                         class="flex items-start justify-between gap-4"
@@ -164,28 +151,404 @@
                             <div
                                 id="work-items"
                                 class="flex flex-col gap-9 items-start justify-start"
-                            ></div>
+                            >
+                                <div class="work-item w-full">
+                                    <div>
+                                        <h3
+                                            id="work-item-1"
+                                            class="work-title text-xl lastik-font"
+                                        >
+                                            Enine
+                                        </h3>
+                                        <div
+                                            class="work-timeline flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-between "
+                                        >
+                                            <p class="font-medium">
+                                                Software Developer
+                                            </p>
+                                            <p class="font-medium">
+                                                Oct 25 - Present
+                                            </p>
+                                        </div>
+                                        <a
+                                            class="work-link hover:underline primary-blue"
+                                            href="https://enine.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >enine.com</a
+                                        >
+                                    </div>
+                                    <p class="gray-text opacity-85 ">
+                                        Working on
+                                        <a
+                                            href="https://batteryos.com"
+                                            class="underline"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >BatteryOS</a
+                                        >, making APIs, writing scripts to
+                                        transform data, adding frontend
+                                        features.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 pt-2">
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >Django</span
+                                        >
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >Python</span
+                                        >
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >Celery</span
+                                        >
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >HTML/CSS</span
+                                        >
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >JavaScript</span
+                                        >
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >Bootstrap</span
+                                        >
+                                    </div>
+                                </div>
+                                <div class="work-item w-full">
+                                    <div>
+                                        <h3
+                                            id="target-heading"
+                                            class="work-title text-xl lastik-font"
+                                        >
+                                            Persist Ventures
+                                        </h3>
+                                        <div
+                                            class="work-timeline flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-between "
+                                        >
+                                            <p class="font-medium">
+                                                Frontend Developer | Intern
+                                            </p>
+                                            <p class="font-medium">
+                                                Jan 2025 - June 2025
+                                            </p>
+                                        </div>
+                                        <a
+                                            class="work-link hover:underline primary-blue"
+                                            href="https://vidgencraft.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >vidgencraft.com</a
+                                        >
+                                    </div>
+                                    <p class="gray-text opacity-85 ">
+                                        Worked on 2 major projects, from
+                                        designing whole website in figma to
+                                        developing it in REACT and integrating
+                                        it with FastAPI backend.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 pt-2">
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >React</span
+                                        >
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >HTML/CSS</span
+                                        >
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >JavaScript</span
+                                        >
+                                        <span
+                                            class="px-2 py-2 text-xs rounded-lg border-1 border-balck/10 flex items-center"
+                                            >Tailwind</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <h1 class="font-medium gray-text opacity-25 text-lg">
+                </section>
+                <section id="projects" class="flex flex-col gap-4" aria-labelledby="projects-heading">
+                    <h2
+                        id="projects-heading"
+                        class="font-medium gray-text opacity-25 text-lg"
+                    >
                         Projects
-                    </h1>
+                    </h2>
                     <div
                         id="project-content"
                         class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch"
-                    ></div>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <h1 class="font-medium gray-text opacity-25 text-lg">
+                    >
+                        <div
+                            id="Varnam"
+                            class="project-item flex flex-col gap-6 h-full"
+                        >
+                            <div class=" overflow-hidden aspect-16/9">
+                                <img
+                                    src="https://varnam.xyz/og-image.png"
+                                    alt="Varnam, an AI image generation playground"
+                                    width="640"
+                                    height="360"
+                                    class="w-full h-full object-cover rounded-xl"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                            <div
+                                class="project-text-parent flex flex-col items-start justify-between flex-1 gap-4"
+                            >
+                                <div
+                                    class="project-text-content flex flex-col gap-4"
+                                >
+                                    <h3 class="text-xl">Varnam</h3>
+                                    <p>
+                                        An AI image generation Playground that
+                                        helps you make high quality visuals
+                                        fast.
+                                    </p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a
+                                        href="https://varnam.xyz"
+                                        class="uppercase"
+                                        aria-label="Varnam live site"
+                                        >Live
+                                        <span
+                                            class="inline-block w-3 h-3 bg-black"
+                                            style="-webkit-mask: url('/assets/arrow.png') no-repeat center; mask: url('/assets/arrow.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id="Better-Write-Prompt"
+                            class="project-item flex flex-col gap-6 h-full"
+                        >
+                            <div class=" overflow-hidden aspect-16/9">
+                                <img
+                                    src="https://betterwriteprompt.vercel.app/og-image.png"
+                                    alt="Better Write Prompt, a prompt improvement tool"
+                                    width="640"
+                                    height="360"
+                                    class="w-full h-full object-cover rounded-xl"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                            <div
+                                class="project-text-parent flex flex-col items-start justify-between flex-1 gap-4"
+                            >
+                                <div
+                                    class="project-text-content flex flex-col gap-4"
+                                >
+                                    <h3 class="text-xl">Better Write Prompt</h3>
+                                    <p>
+                                        Simple prompt improvement tool no
+                                        authentication, no chat history, just
+                                        enter your prompt select type of
+                                        generation you want and get results.
+                                    </p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a
+                                        href="https://betterwriteprompt.vercel.app/"
+                                        class="uppercase"
+                                        aria-label="Better Write Prompt live site"
+                                        >Live
+                                        <span
+                                            class="inline-block w-3 h-3 bg-black"
+                                            style="-webkit-mask: url('/assets/arrow.png') no-repeat center; mask: url('/assets/arrow.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                    <a
+                                        href="https://github.com/Somraj-234/betterwriteprompt"
+                                        class="uppercase"
+                                        aria-label="Better Write Prompt source code"
+                                        >Code
+                                        <span
+                                            class="inline-block w-3 h-3 bg-primary-blue"
+                                            style="-webkit-mask: url('/assets/star.png') no-repeat center; mask: url('/assets/star.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id="BityBoi"
+                            class="project-item flex flex-col gap-6 h-full"
+                        >
+                            <div class=" overflow-hidden aspect-16/9">
+                                <img
+                                    src="https://bityboi.vercel.app/og-image.png"
+                                    alt="BityBoi, a URL shortener"
+                                    width="640"
+                                    height="360"
+                                    class="w-full h-full object-cover rounded-xl"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                            <div
+                                class="project-text-parent flex flex-col items-start justify-between flex-1 gap-4"
+                            >
+                                <div
+                                    class="project-text-content flex flex-col gap-4"
+                                >
+                                    <h3 class="text-xl">BityBoi</h3>
+                                    <p>
+                                        A modern URL shortener built using
+                                        Django REST, React, and Tailwind.
+                                        Includes login, Google auth, click
+                                        tracking, and multi-delete.
+                                    </p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a
+                                        href="https://bityboi.vercel.app"
+                                        class="uppercase"
+                                        aria-label="BityBoi live site"
+                                        >Live
+                                        <span
+                                            class="inline-block w-3 h-3 bg-black"
+                                            style="-webkit-mask: url('/assets/arrow.png') no-repeat center; mask: url('/assets/arrow.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                    <a
+                                        href="https://github.com/Somraj-234/bityboi"
+                                        class="uppercase"
+                                        aria-label="BityBoi source code"
+                                        >Code
+                                        <span
+                                            class="inline-block w-3 h-3 bg-primary-blue"
+                                            style="-webkit-mask: url('/assets/star.png') no-repeat center; mask: url('/assets/star.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id="PalmPaper"
+                            class="project-item flex flex-col gap-6 h-full"
+                        >
+                            <div class=" overflow-hidden aspect-16/9">
+                                <img
+                                    src="assets/palmpaper.png"
+                                    alt="PalmPaper note taking app"
+                                    width="640"
+                                    height="360"
+                                    class="w-full h-full object-cover rounded-xl"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                            <div
+                                class="project-text-parent flex flex-col items-start justify-between flex-1 gap-4"
+                            >
+                                <div
+                                    class="project-text-content flex flex-col gap-4"
+                                >
+                                    <h3 class="text-xl">
+                                        PalmPaper (in-development)
+                                    </h3>
+                                    <p>
+                                        Note Taking app with markdown support,
+                                        dark mode, and a clean and Modern UI.
+                                    </p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a
+                                        href="https://palmpaper.vercel.app/"
+                                        class="uppercase"
+                                        aria-label="PalmPaper live site"
+                                        >Live
+                                        <span
+                                            class="inline-block w-3 h-3 bg-black"
+                                            style="-webkit-mask: url('/assets/arrow.png') no-repeat center; mask: url('/assets/arrow.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                    <a
+                                        href="https://github.com/Somraj-234/notesapp"
+                                        class="uppercase"
+                                        aria-label="PalmPaper source code"
+                                        >Code
+                                        <span
+                                            class="inline-block w-3 h-3 bg-primary-blue"
+                                            style="-webkit-mask: url('/assets/star.png') no-repeat center; mask: url('/assets/star.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            id="Obys-Agency-Clone"
+                            class="project-item flex flex-col gap-6 h-full"
+                        >
+                            <div class=" overflow-hidden aspect-16/9">
+                                <img
+                                    src="assets/obys-og.png"
+                                    alt="Obys Agency clone website"
+                                    width="640"
+                                    height="360"
+                                    class="w-full h-full object-cover rounded-xl"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                            <div
+                                class="project-text-parent flex flex-col items-start justify-between flex-1 gap-4"
+                            >
+                                <div
+                                    class="project-text-content flex flex-col gap-4"
+                                >
+                                    <h3 class="text-xl">Obys Agency Clone</h3>
+                                    <p>
+                                        Obys Agency clone with animated
+                                        components, typography, clean ui.
+                                    </p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <a
+                                        href="https://somraj-234.github.io/Obys-Agency/"
+                                        class="uppercase"
+                                        aria-label="Obys Agency clone live site"
+                                        >Live
+                                        <span
+                                            class="inline-block w-3 h-3 bg-black"
+                                            style="-webkit-mask: url('/assets/arrow.png') no-repeat center; mask: url('/assets/arrow.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                    <a
+                                        href="https://github.com/Somraj-234/Obys-Agency"
+                                        class="uppercase"
+                                        aria-label="Obys Agency clone source code"
+                                        >Code
+                                        <span
+                                            class="inline-block w-3 h-3 bg-primary-blue"
+                                            style="-webkit-mask: url('/assets/star.png') no-repeat center; mask: url('/assets/star.png') no-repeat center; -webkit-mask-size: contain; mask-size: contain;"
+                                        ></span
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="archive" class="flex flex-col gap-4" aria-labelledby="archive-heading">
+                    <h2
+                        id="archive-heading"
+                        class="font-medium gray-text opacity-25 text-lg"
+                    >
                         Archive
-                    </h1>
+                    </h2>
                     <div
                         id="archive-content"
                         class="w-full gap-4 items-stretch"
                     ></div>
-                </div>
+                </section>
                 <div
                     id="footer"
                     class="w-full flex flex-col items-center justify-center gap-2"
@@ -194,36 +557,43 @@
                         <img
                             class="w-full h-full object-contain"
                             src="./assets/somraj-type.svg"
-                            alt="logo"
+                            width="192"
+                            height="48"
+                            alt="Somraj wordmark"
                         />
                     </div>
                     <div class="flex items-center justify-center gap-4">
                         <a
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="hover:underline font-regular"
                             href="https://x.com/somrajjj"
                             >X</a
                         >
                         <a
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="hover:underline font-regular"
-                            href="https://x.com/somrajadhav"
+                            href="https://www.instagram.com/somrajadhav/"
                             >Instagram</a
                         >
                         <a
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="hover:underline font-regular"
                             href="https://github.com/somraj-234"
                             >Github</a
                         >
                         <a
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="hover:underline font-regular"
                             href="https://www.linkedin.com/in/somrajjadhav/"
                             >LinkedIn</a
                         >
                         <a
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="hover:underline font-regular"
                             href="https://234studios.gumroad.com/"
                             >Gumroad</a

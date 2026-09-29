@@ -1,0 +1,26 @@
+# Somraj Jadhav
+
+> Personal site of Somraj Jadhav, a self-taught software developer and artist. He builds full-stack web apps, designs UI, and makes graphic work.
+
+This is a single-page portfolio at https://somraj.net/. There is no blog, docs set, or product app on this domain. Prefer this file plus the homepage HTML over guessing from images.
+
+## Work
+
+- Enine (Oct 2025–present), software developer on BatteryOS (https://batteryos.com): APIs, data-transform scripts, frontend. Stack: Django, Python, Celery, HTML/CSS, JavaScript, Bootstrap. Company: https://enine.com/
+- Persist Ventures (Jan 2025–June 2025), frontend intern: designed sites in Figma, built them in React, integrated FastAPI. Related: https://vidgencraft.com/
+
+## Projects
+
+- [Varnam](https://varnam.xyz): AI image-generation playground for fast, high-quality visuals.
+- [Better Write Prompt](https://betterwriteprompt.vercel.app/): Prompt-improvement tool with no auth or chat history. Code: https://github.com/Somraj-234/betterwriteprompt
+- [BityBoi](https://bityboi.vercel.app): URL shortener (Django REST, React, Tailwind) with login, Google auth, click tracking. Code: https://github.com/Somraj-234/bityboi
+- [PalmPaper](https://palmpaper.vercel.app/): Note app (in development) with markdown, dark mode. Code: https://github.com/Somraj-234/notesapp
+- [Obys Agency clone](https://somraj-234.github.io/Obys-Agency/): Front-end clone with animation and typography. Code: https://github.com/Somraj-234/Obys-Agency
+
+## Elsewhere
+
+- X: https://x.com/somrajjj
+- Instagram: https://www.instagram.com/somrajadhav/
+- GitHub: https://github.com/somraj-234
+- LinkedIn: https://www.linkedin.com/in/somrajjadhav/
+- Gumroad: https://234studios.gumroad.com/
