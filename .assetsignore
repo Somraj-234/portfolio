@@ -4,3 +4,4 @@ docs
 SKILL.md
 wrangler.jsonc
 .assetsignore
+.wrangler

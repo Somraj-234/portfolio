@@ -32,7 +32,7 @@ Jeremy Howard’s `/llms.txt` format: H1, summary blockquote, then lists of real
 
 ### No `ai-catalog.json`
 
-Lighthouse fails schema if that path returns HTML. This site has no MCP server or agent API. A fake catalog would be dishonest and would still fail. `_redirects` maps `/.well-known/ai-catalog.json` and `ard.json` to `404.html` so SPA fallback cannot serve the homepage there. Missing catalog should be N/A, not a fail.
+Lighthouse fails schema if that path returns HTML. This site has no MCP server or agent API. A fake catalog would be dishonest and would still fail. `wrangler.jsonc` uses `not_found_handling: "404-page"`, so missing `/.well-known/ai-catalog.json` returns `404.html` instead of the homepage. Workers `_redirects` cannot use status 404 (only 200/301/302/303/307/308), so a redirects file is not used for this.
 
 ### `_headers`
 
